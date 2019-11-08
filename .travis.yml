@@ -9,4 +9,4 @@ before_install:
   - docker build -t jolie/citester test/
 
 script:
-  - docker run -d jolie/citester
+  - docker run jolie/citester
