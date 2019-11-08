@@ -1,19 +1,7 @@
 include "console.iol"
+include "testinterface.iol"
 
 execution{ concurrent }
-
-type helloRequest: void {
-  msg: string
-}
-
-type helloResponse: void {
-  msg: string
-}
-
-interface testInterface {
-RequestResponse:
-  hello( helloRequest ) ( helloResponse )
-}
 
 inputPort PortName {
   Location: "socket://localhost:8000/"

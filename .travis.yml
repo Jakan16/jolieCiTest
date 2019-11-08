@@ -6,3 +6,6 @@ services:
 before_install:
   - docker build -t jolie/citest .
   - docker run -d -p 8000:8000 jolie/citest
+
+script:
+  - jolie test/tester.ol
