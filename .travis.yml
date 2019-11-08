@@ -8,4 +8,4 @@ before_install:
   - docker run -d --name citest-cnt -p 8000:8000 jolie/citest
 
 script:
-  - docker exec -it citest-cnt jolie test/tester.ol
+  - docker exec citest-cnt jolie test/tester.ol
