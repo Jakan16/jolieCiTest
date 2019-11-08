@@ -5,8 +5,7 @@ services:
 
 before_install:
   - docker build -t jolie/citest .
-  - docker run -d -p 8000:8000 jolie/citest
-  - docker build -t jolie/citester test/
+  - docker run -d --name citest-cnt -p 8000:8000 jolie/citest
 
 script:
-  - docker run jolie/citester
+  - docker exec -it citest-cnt jolie test/tester.ol
