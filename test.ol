@@ -13,7 +13,7 @@ main
 {
   hello( in ) ( out ){
     if( in.msg == "hello" ) {
-      out.msg = "world!"
+      out.msg = "world!!"
     }else {
       out.msg = "?"
     }
