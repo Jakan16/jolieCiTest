@@ -6,7 +6,7 @@ type helloResponse: void {
   msg: string
 }
 
-interface testInterface {
+interface mainInterface {
 RequestResponse:
   hello( helloRequest ) ( helloResponse )
 }

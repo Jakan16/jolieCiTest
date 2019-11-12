@@ -1,5 +1,5 @@
 FROM jolielang/jolie
 EXPOSE 8000
-COPY src src
+COPY test test
 COPY interfaces interfaces
-CMD jolie src/main.ol
+CMD jolie test/test.ol

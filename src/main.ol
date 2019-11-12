@@ -1,12 +1,12 @@
 include "console.iol"
-include "testinterface.iol"
+include "../interfaces/MainInterface.iol"
 
 execution{ concurrent }
 
 inputPort PortName {
   Location: "socket://localhost:8000/"
   Protocol: http
-  Interfaces: testInterface
+  Interfaces: mainInterface
 }
 
 main

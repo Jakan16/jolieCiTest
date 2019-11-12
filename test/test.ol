@@ -1,11 +1,11 @@
 include "runtime.iol"
 include "console.iol"
-include "../testinterface.iol"
+include "../interfaces/MainInterface.iol"
 
 outputPort Test {
   Location: "socket://localhost:8000/"
   Protocol: http
-  Interfaces: testInterface
+  Interfaces: mainInterface
 }
 
 main

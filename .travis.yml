@@ -6,6 +6,9 @@ services:
 before_install:
   - docker build -t jolie/citest .
   - docker run -d --name citest-cnt -p 8000:8000 jolie/citest
+  - docker build -t jolie/citesttests . -f Test.Dockerfile
+  - docker run -it --name citest-cnt-tests jolie/citesttests
 
 script:
-  - docker exec citest-cnt jolie test/tester.ol
+# - docker exec citest-cnt jolie test/tester.ol
+  - jolie test/test.ol
