@@ -21,7 +21,7 @@ main
   hello@Test({ msg = "bye" }) ( response )
 
   if( response.msg == "world!" ) {
-    println@Console( "expected anythin but world!" )()
+    println@Console( "expected anything but world!" )()
     halt@Runtime( {status = 2} )( )
   }
 
