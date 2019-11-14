@@ -10,23 +10,26 @@ outputPort Test {
 
 main
 {
-  install( this =>
+  scope( test )
+  {
+    install( IOException =>
+      println@Console( "Failed to connect" )()
       halt@Runtime( {status = 50} )( )
-  );
+    )
 
-  hello@Test({ msg = "hello" }) ( response )
+    hello@Test({ msg = "hello" }) ( response )
 
-  if( response.msg != "world!" ) {
-    println@Console( "expected world!" )()
-    halt@Runtime( {status = 1} )( )
+    if( response.msg != "world!" ) {
+      println@Console( "expected world!" )()
+      halt@Runtime( {status = 1} )( )
+    }
+
+
+    hello@Test({ msg = "bye" }) ( response )
+
+    if( response.msg == "world!" ) {
+      println@Console( "expected anything but world!" )()
+      halt@Runtime( {status = 2} )( )
+    }
   }
-
-
-  hello@Test({ msg = "bye" }) ( response )
-
-  if( response.msg == "world!" ) {
-    println@Console( "expected anything but world!" )()
-    halt@Runtime( {status = 2} )( )
-  }
-
 }

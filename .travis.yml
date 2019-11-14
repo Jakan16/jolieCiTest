@@ -12,4 +12,5 @@ install:
 
 script:
   - jolie src/main.ol &
+  - sleep 10
   - jolie test/test.ol
