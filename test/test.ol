@@ -10,6 +10,10 @@ outputPort Test {
 
 main
 {
+  install( this =>
+      halt@Runtime( {status = 50} )( )
+  );
+
   hello@Test({ msg = "hello" }) ( response )
 
   if( response.msg != "world!" ) {
